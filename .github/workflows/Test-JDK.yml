@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Test JDK Latest Version
+name: Test Java Development Kits Latest Version
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -11,7 +11,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  JDK-Test:
     runs-on: ubuntu-20.04
     name: Install the latest Java, Compile HelloWorld.java into a class, and run the class.
     steps:
