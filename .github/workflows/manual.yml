@@ -1,0 +1,29 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on: workflow_dispatch
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    name: Install the latest Java, Compile HelloWorld.java into a class, and run the class.
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get GCC
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade
+          sudo apt-get install build-essential
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Compile and Run HelloWorld
+        run: |
+          javac HelloWorld.java
+          java HelloWorld
