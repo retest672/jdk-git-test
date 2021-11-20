@@ -1,10 +1,10 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Test JDK Latest Version
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,12 +17,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get upgrade
+          sudo apt-get purge build-essential
           sudo apt-get install build-essential
       - name: Setup Java JDK
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
           java-version: '17'
+          check-latest: true
       - name: Compile and Run HelloWorld
         run: |
           javac HelloWorld.java
