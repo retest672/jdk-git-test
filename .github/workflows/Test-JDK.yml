@@ -1,29 +1,29 @@
-name: Test JDKs Latest Version
+name: Test the Latest Version of the JDK
 on:
   schedule:
     - cron:  '0 0 * * *'
 jobs:
   JDK-Test:
     runs-on: ubuntu-20.04
-    name: Install Java and run the java class.
+    name: Install Java and run the class.
     steps:
       - uses: actions/checkout@v2
       - name: Update GCC
-        # Runs sudo apt-get to update dependencies
+        # Runs an excessive use of apt-get
         run: |
           sudo apt-get update
           sudo apt-get upgrade
           sudo apt-get purge build-essential
           sudo apt-get install build-essential
       - name: Install Java
-        # Sets up and installs the JDK from actions/setup-java
+        # Installs the JDK
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
           java-version: '17'
           check-latest: true
-      - name: Run HelloWorld
-        # Compiles the .java file into a class, then runs the class.
+      - name: Run HelloWorld.JAVA
+        # Compiles the .java file, then runs the class.
         run: |
           javac HelloWorld.java
           java HelloWorld
