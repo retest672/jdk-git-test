@@ -8,15 +8,15 @@ jobs:
     name: Install Java and run the java class.
     steps:
       - uses: actions/checkout@v2
-      - name: Get GCC
+      - name: Update GCC
         # Runs sudo apt-get to update dependencies
         run: |
           sudo apt-get update
           sudo apt-get upgrade
           sudo apt-get purge build-essential
           sudo apt-get install build-essential
-      - name: Setup Java
-        # Sets up the JDK from actions/setup-java
+      - name: Install Java
+        # Sets up and installs the JDK from actions/setup-java
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
