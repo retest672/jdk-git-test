@@ -1,4 +1,4 @@
-name: Test Java Development Kits Latest Version
+name: Test JDKs Latest Version
 on:
   schedule:
     - cron:  '0 0 * * *'
