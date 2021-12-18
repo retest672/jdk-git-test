@@ -2,6 +2,7 @@ name: Test the Latest Version of the JDK
 on:
   schedule:
     - cron:  '0 0 * * *'
+  workflow_dispatch:
 jobs:
   JDK-Test:
     runs-on: ubuntu-20.04
