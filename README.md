@@ -1,7 +1,7 @@
 # jdk-git-test
-Testing the latest version of Java every 20 days every month.
+Testing the latest version of Java every day.
 
-Latest Commit: Add additional on conditions
+Latest Commit: Fix README.md
 
 [![Commit Activity](https://img.shields.io/github/commit-activity/w/retest672/jdk-git-test?logo=github&style=plastic)](https://github.com/retest672/jdk-git-test/commits/main)
 
