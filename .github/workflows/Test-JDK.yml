@@ -23,7 +23,7 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
           check-latest: true
-      - name: Run HelloWorld.JAVA
+      - name: Run HelloWorld.java
         # Compiles the .java file, then runs the class.
         run: |
           javac HelloWorld.java
