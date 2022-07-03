@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: '17'
+          java-version: '18'
           check-latest: true
       - name: Run HelloWorld.java
         # Compiles the .java file, then runs the class.
